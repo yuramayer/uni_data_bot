@@ -1,7 +1,7 @@
 # ChatGPT Bot + Yandex S3
 
 <p align="right">
-  <a href="README.ru.md">Читать на русском</a>
+  <a href="README_ru.md">Читать на русском</a>
 </p>
 
 ![Bot Picture](img/bot_pic.png)

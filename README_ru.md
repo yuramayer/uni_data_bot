@@ -1,9 +1,8 @@
 # Ботик ChatGPT + Yandex S3
 
 <p align="right">
-  <a href="README.ru.md">Read on English</a>
+  <a href="README.md">Read on English</a>
 </p>
-
 
 ![Bot Picture](img/bot_pic.png)
 
