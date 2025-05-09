@@ -26,7 +26,7 @@ like Query and DataLens.
 
 ## Result
 
-You can try the bot here: 
+You can try the bot here:
 **[t.me/botrqst_gpt_bot](https://t.me/botrqst_gpt_bot)**
 
 The dashboard link is attached to the homework.  
