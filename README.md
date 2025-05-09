@@ -1,34 +1,40 @@
-# Ботик ChatGPT + Yandex S3
+# ChatGPT Bot + Yandex S3
+
+<p align="right">
+  <a href="README.ru.md">Читать на русском</a>
+</p>
 
 ![Bot Picture](img/bot_pic.png)
 
-Учебный проект по курсу "Инжиниринг данных"
+A small educational project from the “Data Engineering” course.
 
-## Стек
+## Stack
 
-- Бот на Aiogram ✈️
-- Генерация ответа на GPT-4o 🤖
-- Data lake на Yandex S3 ☁️
-- Обработка через Yandex Query ⚙️
-- Дашборд на Yandex DataLens 🌻
+- Aiogram Telegram bot ✈️  
+- GPT-4o response generation 🤖  
+- Data lake on Yandex S3 ☁️  
+- Querying with Yandex Query ⚙️  
+- Dashboard built in Yandex DataLens 🌻  
 
-### Почему такой стек?
+### Why this stack?
 
-Я выбрал aiogram и OpenAI API потому что раньше работал с ними,
-и всё было классно) Я думал между Postgres и S3, и остановился
-на S3 из-за удобной яндексовской экосистемы S3-Query-DataLens
+I chose Aiogram and OpenAI API because I worked with them before,  
+and they were easy and fun to use.  
+I was choosing between Postgres and S3.  
+I picked S3 because it works well with Yandex services  
+like Query and DataLens.
 
-## Результат
+## Result
 
-Бота можно потыкать здесь:
+You can try the bot here: 
 **[t.me/botrqst_gpt_bot](https://t.me/botrqst_gpt_bot)**
 
-Ссылку на дашборд я прикрепил к домашнему заданию. К дашборду я добавил
-табличку, в которой можно интерактивно почитать логи
+The dashboard link is attached to the homework.  
+The dashboard includes a table where you can explore the logs.
 
-## Собственный деплой
+## Run it yourself
 
-Чтобы развернуть бота, создай и заполни в директории `.env`-файл такого формата:
+To run this bot, create a `.env` file in the project folder with this format:
 
 ```env
 BOT_TOKEN=''
@@ -39,5 +45,5 @@ CLOUD_S3_SECRET_KEY=''
 BUCKET_NAME=''
 ```
 
-OpenAI API не доступен в России,
-поэтому деплоить нужно на зарубежном VPS 😢
+> ⚠️ OpenAI API does not work in Russia,
+so you’ll need to deploy it on a server outside the country 😢
