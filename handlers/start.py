@@ -4,9 +4,15 @@ from aiogram.types import Message
 import time
 import datetime
 from back.cloud import get_key, send_logs
+from filters.admin_checker import IsAdmin
+from config.conf import admins_ids
 
 
 start_router = Router()
+start_router.message.filter(
+    IsAdmin(admins_ids)
+)
+
 
 @start_router.message(Command('start'))
 async def cmd_start(message: Message):

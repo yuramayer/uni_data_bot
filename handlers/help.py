@@ -4,9 +4,15 @@ from aiogram.types import Message
 import time
 import datetime
 from back.cloud import get_key, send_logs
+from filters.admin_checker import IsAdmin
+from config.conf import admins_ids
 
 
 help_router = Router()
+help_router.message.filter(
+    IsAdmin(admins_ids)
+)
+
 
 @help_router.message(Command('help'))
 async def cmd_help(message: Message):

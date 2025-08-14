@@ -4,8 +4,15 @@ import time
 import datetime
 from back.answer import create_answer
 from back.cloud import get_key, send_logs
+from filters.admin_checker import IsAdmin
+from config.conf import admins_ids
+
 
 reply_router = Router()
+reply_router.message.filter(
+    IsAdmin(admins_ids)
+)
+
 
 @reply_router.message(F.text)
 async def bot_reply(message: Message):
