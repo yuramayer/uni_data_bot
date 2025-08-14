@@ -54,4 +54,3 @@ async def bot_reply(message: Message):
 
     except (ValueError, TypeError, KeyError, RequestException):
         await message.answer('При записи логов произошла ошибка 😔')
-
