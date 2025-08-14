@@ -1,5 +1,7 @@
-from dotenv import load_dotenv
+"""Project env variables"""
+
 import os
+from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
@@ -11,5 +13,5 @@ CLOUD_S3_SECRET_KEY = str(os.getenv('CLOUD_S3_SECRET_KEY'))
 BUCKET_NAME = str(os.getenv('BUCKET_NAME'))
 
 
-admins_ids = [int(admin_id) for admin_id 
+admins_ids = [int(admin_id) for admin_id
               in ADMINS.split(',')]
