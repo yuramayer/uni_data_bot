@@ -1,7 +1,13 @@
+"""S3 funcs module"""
+
+import json
 import boto3
 from botocore.config import Config
-import json
-from config.conf import CLOUD_S3_ID_KEY, CLOUD_S3_SECRET_KEY, BUCKET_NAME
+from config.conf import (
+    CLOUD_S3_ID_KEY,
+    CLOUD_S3_SECRET_KEY,
+    BUCKET_NAME
+)
 
 
 s3 = boto3.client(
@@ -10,11 +16,12 @@ s3 = boto3.client(
         service_name='s3',
         endpoint_url='https://storage.yandexcloud.net',
         region_name='ru-central1',
-        config=Config(signature_version='s3v4') 
+        config=Config(signature_version='s3v4')
 )
 
 
 def get_key(timestamp: str, user_id: int) -> str:
+    """Create key-identifier for the logs object"""
     date, time_str = timestamp.split('T')
     hour = time_str[:2]
     key = f"chat_logs/date={date}/hour={hour}/{user_id}_{timestamp}.json"
@@ -22,10 +29,10 @@ def get_key(timestamp: str, user_id: int) -> str:
 
 
 def send_logs(logs_json: dict, key: str):
-
+    """Pushs logs to the S3"""
     s3.put_object(
         Bucket=BUCKET_NAME,
         Key=key,
-        Body=json.dumps(logs_json, 
+        Body=json.dumps(logs_json,
                         ensure_ascii=False).encode('utf-8')
     )
