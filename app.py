@@ -1,12 +1,24 @@
+"""Main aiogram bot app"""
+
 import asyncio
-from handlers import start, help, mes_reply
+from handlers import (
+    start_router,
+    help_router,
+    reply_router,
+    plug_router
+)
 from bot import bot, dp
 from utils.starting import on_startup
 
 
 async def main():
-    dp.include_routers(start.start_router, help.help_router,
-                       mes_reply.reply_router)
+    """Base bot func"""
+    dp.include_routers(
+        start_router,
+        help_router,
+        reply_router,
+        plug_router
+    )
     dp.startup.register(on_startup)
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
