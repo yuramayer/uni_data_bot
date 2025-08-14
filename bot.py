@@ -1,9 +1,11 @@
+"""Bot core objects module"""
+
 import logging
-from config import conf
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
+from config import conf
 
 
 logging.basicConfig(
